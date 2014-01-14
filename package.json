@@ -25,8 +25,8 @@
     "optparse": "1.x.x",
     "underscore": "1.x.x",
     "redis": "0.6.x",
-    "htmlparser": "1.8.0",
-    "soupselect": "0.2.0",
-    "validator" : "0.4.20"
+    "htmlparser": "",
+    "soupselect": "",
+    "validator" : ""
   }
 }
