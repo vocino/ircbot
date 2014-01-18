@@ -27,6 +27,7 @@
     "redis": "0.6.x",
     "htmlparser": "",
     "soupselect": "",
-    "validator" : ""
+    "validator" : "",
+    "jsdom": "0.8.10"
   }
 }
