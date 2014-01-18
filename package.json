@@ -28,6 +28,6 @@
     "htmlparser": "",
     "soupselect": "",
     "validator" : "",
-    "jsdom": "0.8.10"
+    "cheerio": "0.10.5"
   }
 }
