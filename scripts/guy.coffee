@@ -1,5 +1,5 @@
 # Description:
-#   Hubot delivers a pic from Reddit's /r/boobs frontpage
+#   Hubot delivers a pic from Reddit's /r/ladyboners frontpage
 #
 # Dependencies:
 #   None
@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot boobs - Display the picture from /r/boobs
+#   hubot guy please - Display the picture from /r/ladyboners
 #
 # Author:
 #   eliperkins
@@ -16,19 +16,19 @@
 url = require("url")
 
 module.exports = (robot) ->
-  robot.respond /boobs please/i, (msg) ->
+  robot.respond /guy please/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('http://www.reddit.com/r/boobs.json')
+    msg.http('http://www.reddit.com/r/ladyboners.json')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
         urls = [ ]
         for child in result.data.children
-          if child.data.domain != "self.boobs"
+          if child.data.domain != "self.ladyboners"
             urls.push(child.data.url)
 
         if urls.count <= 0
-          msg.send "Couldn't find any boobs..."
+          msg.send "Couldn't find any Lady Boners..."
           return
 
         rnd = Math.floor(Math.random()*urls.length)
@@ -41,4 +41,4 @@ module.exports = (robot) ->
 
           picked_url = url.format(parsed_url)
 
-        msg.send picked_url + ' (NSFW)'
+        msg.send picked_url
