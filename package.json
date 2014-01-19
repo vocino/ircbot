@@ -28,6 +28,7 @@
     "htmlparser": "",
     "soupselect": "",
     "validator" : "",
-    "cheerio": "0.10.5"
+    "cheerio": "0.10.5",
+    "cleverbot-node": "0.1.1"
   }
 }
