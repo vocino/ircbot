@@ -41,4 +41,4 @@ module.exports = (robot) ->
 
           picked_url = url.format(parsed_url)
 
-        msg.send picked_url + '(NSFW)'
+        msg.send picked_url + ' (NSFW)'
