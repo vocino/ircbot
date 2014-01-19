@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot : <input>
+#   letsplay: <input>
 #
 # Author:
 #   ajacksified
@@ -18,7 +18,7 @@ cleverbot = require('cleverbot-node')
 module.exports = (robot) ->
   c = new cleverbot()
 
-  robot.hear /letsplay: (.*)/i, (msg) ->
+  robot.hear /c (.*)/i, (msg) ->
     data = msg.match[1].trim()
     c.write(data, (c) => msg.send(c.message))
 
