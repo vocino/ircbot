@@ -16,7 +16,7 @@
 url = require("url")
 
 module.exports = (robot) ->
-  robot.hear /boobs/i, (msg) ->
+  robot.respond /boobs please/i, (msg) ->
     search = escape(msg.match[1])
     msg.http('http://www.reddit.com/r/boobs.json')
       .get() (err, res, body) ->
@@ -41,4 +41,4 @@ module.exports = (robot) ->
 
           picked_url = url.format(parsed_url)
 
-        msg.send picked_url
+        msg.send picked_url + '(NSFW)'
