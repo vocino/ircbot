@@ -52,14 +52,14 @@ unless config.accounts_json
 config.accounts = JSON.parse(config.accounts_json || "{}")
 
 module.exports = (robot) ->
-  robot.respond /tweet/i, (msg) ->
+  robot.respond /tweet$/i, (msg) ->
     msg.reply "You can't very well tweet an empty status, can ya?"
     return
 
-  robot.respond /tweet (.+)/i, (msg) ->
+  robot.respond /tweet (.+)$/i, (msg) ->
 
     username = "rletsplay"
-    update   = msg.match[1].trim()
+    update   = msg.match[2].trim()
 
     unless config.accounts[username]
       msg.reply "I'm not setup to send tweets on behalf of #{msg.match[1]}. Sorry."
