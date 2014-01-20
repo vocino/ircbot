@@ -9,7 +9,7 @@
 #   HUBOT_WWO_API_URL
 #
 # Commands:
-#   letsplay time in <city> - Get current time in city
+#   hubot time in <city> - Get current time in city
 #
 # Notes
 #   Request an WWO API KEY in http://www.worldweatheronline.com/

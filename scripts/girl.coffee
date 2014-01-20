@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot girl please - Display the picture from /r/boobs
+#   hubot girl please - Display a picture.
 #
 # Author:
 #   eliperkins

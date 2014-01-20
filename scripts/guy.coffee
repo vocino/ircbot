@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot guy please - Display the picture from /r/ladyboners
+#   hubot guy please - Display a picture.
 #
 # Author:
 #   eliperkins
