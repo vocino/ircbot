@@ -12,12 +12,15 @@
 #   twitter screen name you want to allow people to use.
 #
 #   For example:
-#   { "rletsplay" : { "access_token" : "", "access_token_secret" : ""}}
+#   {
+#     "hubot" : { "access_token" : "", "access_token_secret" : ""},
+#     "github" : { "access_token" : "", "access_token_secret" : ""}
+#   }
 #
 #   This also can be installed as an npm package: hubot-tweeter
 #
 # Commands:
-#   hubot tweet <update> - posts the update to twitter as <screen_name>
+#   hubot tweet@<screen_name> <update> - posts the update to twitter as <screen_name>
 #
 # Dependencies:
 #   "twit": "1.1.8"
@@ -49,13 +52,13 @@ unless config.accounts_json
 config.accounts = JSON.parse(config.accounts_json || "{}")
 
 module.exports = (robot) ->
-  robot.respond /tweet([^\s]+)$/i, (msg) ->
+  robot.respond /tweet\@([^\s]+)$/i, (msg) ->
     msg.reply "You can't very well tweet an empty status, can ya?"
     return
 
-  robot.respond /tweet\s(.+)$/i, (msg) ->
+  robot.respond /tweet\@([^\s]+)\s(.+)$/i, (msg) ->
 
-    username = "rletsplay"
+    username = msg.match[1].toLowerCase()
     update   = msg.match[2].trim()
 
     unless config.accounts[username]
