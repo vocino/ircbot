@@ -59,7 +59,7 @@ module.exports = (robot) ->
   robot.respond /tweet (.+)/i, (msg) ->
 
     username = "rletsplay"
-    update   = msg.match[2].trim()
+    update   = msg.match[1].trim()
 
     unless config.accounts[username]
       msg.reply "I'm not setup to send tweets on behalf of #{msg.match[1]}. Sorry."
