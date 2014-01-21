@@ -26,6 +26,7 @@
     "hubot":         ">= 2.6.0 < 3.0.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-irc": "0.x.x",
+    "hubot-outofcontext": "1.0.1",
     "optparse": "1.x.x",
     "underscore": "1.x.x",
     "redis": "0.6.x",
@@ -34,7 +35,11 @@
     "validator" : "",
     "cheerio": "0.10.5",
     "cleverbot-node": "0.1.1",
-    "twit": "1.1.8"
+    "twit": "1.1.8",
+    "scraper": "0.0.9",
+    "gitio": "1.0.1",
+    "soupselect": "0.2.0",
+    "jsdom": "0.2.14"
   },
 
   "engines": {
