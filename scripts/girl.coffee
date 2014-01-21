@@ -16,7 +16,7 @@
 url = require("url")
 
 module.exports = (robot) ->
-  robot.respond /girl please/i, (msg) ->
+  robot.respond /\b(girl|woman|chick|babe|lady)\b please/i, (msg) ->
     search = escape(msg.match[1])
     msg.http('http://www.reddit.com/r/gentlemanboners.json')
       .get() (err, res, body) ->
@@ -28,7 +28,7 @@ module.exports = (robot) ->
             urls.push(child.data.url)
 
         if urls.count <= 0
-          msg.send "Couldn't find any boobs..."
+          msg.send "Couldn't find any Gentleman Boners..."
           return
 
         rnd = Math.floor(Math.random()*urls.length)

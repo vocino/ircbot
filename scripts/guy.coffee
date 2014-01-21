@@ -16,7 +16,7 @@
 url = require("url")
 
 module.exports = (robot) ->
-  robot.respond /guy please/i, (msg) ->
+  robot.respond /\b(guy|man|dude|gentleman|lad)\b please/i, (msg) ->
     search = escape(msg.match[1])
     msg.http('http://www.reddit.com/r/ladyboners.json')
       .get() (err, res, body) ->
