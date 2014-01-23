@@ -38,8 +38,7 @@
     "scraper": "0.0.9",
     "gitio": "1.0.1",
     "soupselect": "0.2.0",
-    "jsdom": "0.2.14",
-    "wolfram": "",
+    "jsdom": "",
     "twit": "1.1.8"
   },
 
