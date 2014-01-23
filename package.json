@@ -35,12 +35,12 @@
     "validator" : "",
     "cheerio": "0.10.5",
     "cleverbot-node": "0.1.1",
-    "twit": "1.1.8",
     "scraper": "0.0.9",
     "gitio": "1.0.1",
     "soupselect": "0.2.0",
     "jsdom": "0.2.14",
-    "wolfram": "0.2.2"
+    "wolfram": "",
+    "twit": "1.1.8"
   },
 
   "engines": {
