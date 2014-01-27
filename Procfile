@@ -1,1 +1,1 @@
-bot: bin/hubot -a irc -n LetsPlay -d
+app: bin/hubot -a irc -n LetsPlay -d
