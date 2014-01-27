@@ -16,5 +16,6 @@
   "brb.coffee",
   "roll.coffee",
   "ping.coffee",
-  "nickgen.coffee"
+  "nickgen.coffee",
+  "decide.coffee"
 ]
