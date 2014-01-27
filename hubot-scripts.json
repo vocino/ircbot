@@ -13,6 +13,7 @@
   "tell.coffee",
   "karma.coffee",
   "google.coffee",
+  "google-images.coffee",
   "brb.coffee",
   "roll.coffee",
   "ping.coffee",
