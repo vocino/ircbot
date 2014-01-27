@@ -10,6 +10,7 @@
   "imgur-info.coffee",
   "time.coffee",
   "youtube-info.coffee",
+  "fortune.coffee",
   "tell.coffee",
   "karma.coffee",
   "google.coffee",
