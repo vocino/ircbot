@@ -18,5 +18,6 @@
   "roll.coffee",
   "ping.coffee",
   "nickgen.coffee",
-  "decide.coffee"
+  "decide.coffee",
+  "tell.coffee"
 ]
