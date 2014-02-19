@@ -3,11 +3,12 @@
 #
 # Commands:
 #   hubot channel <user>
-#   hubot channel add <user> <channel>
+#   hubot channeladd <user> <channel>
+#   hubot channelremove <user> <channel>
 #
 # Examples:
 #   hubot channel vocino
-#   hubot channel add vocino vocino
+#   hubot channeladd vocino vocino
 
 module.exports = (robot) ->
 
@@ -19,7 +20,6 @@ module.exports = (robot) ->
     "Be more specific, I know #{users.length} people named like that: #{(user.name for user in users).join(", ")}"
 
   robot.respond /channel @?([\w .\-]+)\?*$/i, (msg) ->
-    joiner = ', '
     name = msg.match[1].trim()
 
     users = robot.brain.usersForFuzzyName(name)
@@ -27,17 +27,13 @@ module.exports = (robot) ->
       user = users[0]
       user.channels = user.channels or [ ]
       if user.channels.length > 0
-        if user.channels.join('').search(',') > -1
-          joiner = '; '
-        msg.send "#{name}'s channel is http://youtube.com/#{user.channels.join(joiner)}"
+        msg.send "#{name}'s channel is http://youtube.com/#{user.channels}"
       else
         msg.send "I don't know #{name}'s channel. Use 'channel add <name> <channel>'"
     else if users.length > 1
       msg.send getAmbiguousUserText users
-    else
-      msg.send "#{name}? Never heard of 'em"
 
-  robot.respond /channel add @?([\w .\-_]+) (["'\w: \-_]+)[.!]*$/i, (msg) ->
+  robot.respond /channeladd @?([\w .\-_]+) (["'\w: \-_]+)[.!]*$/i, (msg) ->
     name    = msg.match[1].trim()
     newChannel = msg.match[2].trim()
 
@@ -59,7 +55,7 @@ module.exports = (robot) ->
     else
       msg.send "I don't know #{name}'s channel. Use 'channel add <name> <channel>'"
 
-  robot.respond /channel remove @?([\w .\-_]+) (["'\w: \-_]+)[.!]*$/i, (msg) ->
+  robot.respond /channelremove @?([\w .\-_]+) (["'\w: \-_]+)[.!]*$/i, (msg) ->
     name    = msg.match[1].trim()
     newChannel = msg.match[2].trim()
 
@@ -72,7 +68,7 @@ module.exports = (robot) ->
         msg.send "I know."
       else
         user.channels = (channel for channel in user.channels when channel isnt newChannel)
-        msg.send "Ok, #{newChannel} is no longer associated with #{name}"
+        msg.send "Ok, http://youtube.com/#{newChannel} is no longer associated with #{name}"
     else if users.length > 1
       msg.send getAmbiguousUserText users
     else
