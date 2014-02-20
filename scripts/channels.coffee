@@ -29,7 +29,7 @@ module.exports = (robot) ->
       if user.channels.length > 0
         msg.send "#{name}'s channel is http://youtube.com/#{user.channels}"
       else
-        msg.send "I don't know #{name}'s channel. Use 'channel add <name> <channel>'"
+        msg.send "I don't know #{name}'s channel. Use 'channeladd <name> <channel_username>' (not the url)"
     else if users.length > 1
       msg.send getAmbiguousUserText users
 
@@ -53,7 +53,7 @@ module.exports = (robot) ->
     else if users.length > 1
       msg.send getAmbiguousUserText users
     else
-      msg.send "I don't know #{name}'s channel. Use 'channel add <name> <channel>'"
+      msg.send "I don't know #{name}'s channel. Use 'channeladd <name> <channel_username>' (not the url)"
 
   robot.respond /channelremove @?([\w .\-_]+) (["'\w: \-_]+)[.!]*$/i, (msg) ->
     name    = msg.match[1].trim()
@@ -73,4 +73,12 @@ module.exports = (robot) ->
       msg.send getAmbiguousUserText users
     else
       msg.send "I don't know #{name}'s channel."
+
+  robot.hear /./i, (msg) ->
+    return unless robot.brain.user.channels?
+    if (allChannels = robot.brain.user.channels[user.name])
+      randomChannel = allChannels[Math.floor(Math.random() * allChannels.length)]
+
+      if Math.floor(Math.random() * 100) == 42
+        msg.send "Check out what's new on #{user.name}'s channel at http://youtube.com/#{user.channels}"
 
