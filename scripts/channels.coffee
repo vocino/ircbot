@@ -28,7 +28,7 @@ module.exports = (robot) ->
       user.channels = user.channels or [ ]
       if user.channels.length = 1
         msg.send "#{name}'s channel is http://youtube.com/#{user.channels}"
-      else if user.channels.length > 1
+      else if user.channels.length < 1
         joiner = ' http://youtube.com/'
         msg.send "#{name}'s channels are:#{user.channels.join(joiner)}"
       else
