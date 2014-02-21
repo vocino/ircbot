@@ -26,13 +26,19 @@ module.exports = (robot) ->
     if users.length is 1
       user = users[0]
       user.channels = user.channels or [ ]
-      if user.channels.length === 1
+      if user.channels.length > 0
         msg.send "#{name}'s channel is http://youtube.com/#{user.channels}"
-      else if user.channels.length < 1
+      else if user.channels.length > 1
         joiner = ' http://youtube.com/'
         msg.send "#{name}'s channels are:#{user.channels.join(joiner)}"
       else
         msg.send "I don't know #{name}'s channel. Use 'channeladd <name> <channel_username>' (not the url)"
+
+      # if user.channels.length > 0
+      #   msg.send "#{name}'s channel is http://youtube.com/#{user.channels}"
+      # else
+      #   msg.send "I don't know #{name}'s channel. Use 'channeladd <name> <channel_username>' (not the url)"
+
     else if users.length > 1
       msg.send getAmbiguousUserText users
 
