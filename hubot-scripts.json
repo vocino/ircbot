@@ -19,5 +19,6 @@
   "ping.coffee",
   "nickgen.coffee",
   "decide.coffee",
-  "tell.coffee"
+  "tell.coffee",
+  "advice.coffee"
 ]
